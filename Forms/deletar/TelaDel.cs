@@ -33,5 +33,31 @@ namespace MinhaBiblioteca
             viewResult.DataSource = tabela;
 
         }
+
+        private void btnEsc_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(viewResult.SelectedRows.Count > 0)
+            {
+                DataGridViewRow linha = viewResult.SelectedRows[0];
+                int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
+                Livros livros = new Livros();
+                livros.deletarLivro(id);
+                txtLTituloBuscado.Text = "";
+                viewResult.DataSource = null;
+
+                
+            }
+        }
+
+        private void txtLTituloBuscado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

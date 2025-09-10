@@ -33,6 +33,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtLTituloBuscado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEsc = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +72,7 @@
             this.txtLTituloBuscado.Name = "txtLTituloBuscado";
             this.txtLTituloBuscado.Size = new System.Drawing.Size(306, 20);
             this.txtLTituloBuscado.TabIndex = 8;
+            this.txtLTituloBuscado.TextChanged += new System.EventHandler(this.txtLTituloBuscado_TextChanged);
             // 
             // label1
             // 
@@ -81,11 +84,34 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "DIGITE O TÍTULO DO LIVRO QUE DESEJA APAGAR";
             // 
+            // btnEsc
+            // 
+            this.btnEsc.Location = new System.Drawing.Point(13, 13);
+            this.btnEsc.Name = "btnEsc";
+            this.btnEsc.Size = new System.Drawing.Size(75, 23);
+            this.btnEsc.TabIndex = 12;
+            this.btnEsc.Text = "Voltar";
+            this.btnEsc.UseVisualStyleBackColor = true;
+            this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDel.Location = new System.Drawing.Point(353, 406);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(84, 23);
+            this.btnDel.TabIndex = 13;
+            this.btnDel.Text = "Deletar";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TelaDel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnEsc);
             this.Controls.Add(this.viewResult);
             this.Controls.Add(this.lblTxtresult);
             this.Controls.Add(this.btnBuscar);
@@ -106,5 +132,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtLTituloBuscado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEsc;
+        private System.Windows.Forms.Button btnDel;
     }
 }

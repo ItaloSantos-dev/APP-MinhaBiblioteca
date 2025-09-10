@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco\Conexao.cs" />
+    <Compile Include="Forms\emp\TelaEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\emp\TelaEmp.Designer.cs">
+      <DependentUpon>TelaEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models%28tabelas%29\Alunos.cs" />
     <Compile Include="Models%28tabelas%29\Livros.cs" />
     <Compile Include="Forms\adicionar\TelaAdd.cs">
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\deletar\TelaDel.resx">
       <DependentUpon>TelaDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\emp\TelaEmp.resx">
+      <DependentUpon>TelaEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

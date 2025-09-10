@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinhaBiblioteca.Forms.emp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,11 @@ namespace MinhaBiblioteca
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
-
+            TelaEmp telaemp = new TelaEmp();
+            telaemp.Owner= this;
+            telaemp.Show();
+            this.Hide();
+            
         }
 
         private void btnEsc_Click(object sender, EventArgs e)
@@ -40,6 +45,7 @@ namespace MinhaBiblioteca
             MinhaBiblioteca telalogin = new MinhaBiblioteca();
             this.Hide();
             Owner.Show();
+
 
             
 

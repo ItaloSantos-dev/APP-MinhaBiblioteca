@@ -40,3 +40,4 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.c
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBib.CE4EFD13.Up2Date
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.exe
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.pdb
+D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.emp.TelaEmp.resources

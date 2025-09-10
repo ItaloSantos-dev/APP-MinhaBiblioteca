@@ -35,13 +35,11 @@ namespace MinhaBiblioteca
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Livros livros = new Livros();
-            string titulo = txtTitulo.Text;
-            string autor = txtAutor.Text;
-            int resultado = livros.addLivro(titulo, autor);
-            if (resultado==1)
-            {
-                MessageBox.Show("Livro adicionado com sucesso");
-            }
+            livros.Titulo = txtTitulo.Text;
+            livros.Autor = txtAutor.Text;
+            livros.addLivro(livros);
+            txtAutor.Text = "";
+            txtTitulo.Text = "";
         }
 
         private void btnEsc_Click(object sender, EventArgs e)

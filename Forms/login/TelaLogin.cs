@@ -78,5 +78,10 @@ namespace MinhaBiblioteca
 
 
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
