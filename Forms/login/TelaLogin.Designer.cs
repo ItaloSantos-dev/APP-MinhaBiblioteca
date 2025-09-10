@@ -103,6 +103,7 @@
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Resgistrar-se";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // MinhaBiblioteca
             // 

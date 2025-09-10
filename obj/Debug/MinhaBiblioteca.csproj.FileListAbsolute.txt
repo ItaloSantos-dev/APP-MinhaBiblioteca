@@ -41,3 +41,5 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBib.CE4EFD13
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.exe
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.pdb
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.emp.TelaEmp.resources
+D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.registrar.TelaRegistro.resources
+D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.ConfirmarEmp.resources

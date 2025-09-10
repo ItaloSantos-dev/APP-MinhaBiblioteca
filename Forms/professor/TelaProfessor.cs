@@ -29,8 +29,11 @@ namespace MinhaBiblioteca
 
         private void btnEsc_Click(object sender, EventArgs e)
         {
+            MinhaBiblioteca telalogin = this.Owner as MinhaBiblioteca;
+            telalogin.limpaCampos();
             Owner.Show();
             this.Hide();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

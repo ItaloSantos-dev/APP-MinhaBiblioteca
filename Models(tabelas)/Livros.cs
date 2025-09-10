@@ -97,16 +97,25 @@ namespace MinhaBiblioteca.Models_tabelas_
 
         }
 
-        public void pegarEmp(int _id)
+        public void pegarEmp(Livros livro, String _matricula)
         {
             conect.abrirConexao();
             string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
             MySqlCommand cmd = new MySqlCommand(update, conect.con);
-            cmd.Parameters.AddWithValue("@_id", _id);
-            int resultado = cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@_id", livro.idlivro);
+            int resultado1 = cmd.ExecuteNonQuery();
+
+            update = "UPDATE alunos SET livro_pego = @_id where matricula = @_matricula;";
+            cmd = new MySqlCommand(update, conect.con);
+            cmd.Parameters.AddWithValue("@_id", livro.idlivro);
+            cmd.Parameters.AddWithValue("@_matricula", _matricula);
+            int resultado2 = cmd.ExecuteNonQuery();
+
             conect.fecharConexao();
-            if(resultado > 0)
+            if(resultado1 > 0 && resultado2>0)
             {
+
+
                 MessageBox.Show("Livro pego emprestado com sucesso");
             }
             else

@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Models_tabelas_;
+﻿using MinhaBiblioteca.Forms.registrar;
+using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,11 @@ namespace MinhaBiblioteca
             
             btnEntrar.Enabled = false;
            
+        }
+        public void limpaCampos()
+        {
+            txtSenha.Text = "";
+            txtUser.Text = "";
         }
         public void ativandoBtnEntrar()
         {
@@ -48,22 +54,35 @@ namespace MinhaBiblioteca
         {
             string usuario = txtUser.Text;
             string senha = txtSenha.Text;
-            if (usuario == "professor")
+            if (usuario=="professor")
             {
-                TelaProfessor telaProfessor = new TelaProfessor();
-                telaProfessor.Owner = this;
-                this.Hide();
-                telaProfessor.Show();
+                Professores professor = new Professores();
+                professor.Registro = senha;
+                int validacao = professor.validaLogin(professor);
+                if (validacao==1)
+                {
+                    TelaProfessor telaProfessor = new TelaProfessor();
+                    telaProfessor.Owner = this;
+                    this.Hide();
+                    telaProfessor.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha inválido");
+
+                }
             }
             else
             {
-                Alunos alunos = new Alunos();
-                int validacao = alunos.validarLogin(usuario, senha);
+                Alunos aluno = new Alunos();
+                aluno.Nome = usuario;
+                aluno.Matricula = senha;
+                int validacao = aluno.validarLogin(aluno);
                 if (validacao == 1)
                 {
                     this.Hide();
                     TelaAluno telaaluno = new TelaAluno();
-                    telaaluno.Owner = this;//define telalogin como pai de telaaluno
+                    telaaluno.Owner = this;
                     telaaluno.Show();
                     
                 }
@@ -82,6 +101,14 @@ namespace MinhaBiblioteca
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+           TelaRegistro telaRegistro = new TelaRegistro();
+            telaRegistro.Owner = this;
+            this.Hide();
+            telaRegistro.Show();
         }
     }
 }

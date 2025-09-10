@@ -29,16 +29,26 @@ namespace MinhaBiblioteca.Forms.emp
             
         }
 
+        
+
         private void btnPegar_Click(object sender, EventArgs e)
         {
             if(viewLivrosDisp.SelectedRows.Count > 0)
             {
-                DataGridViewRow linha = viewLivrosDisp.SelectedRows[0];
-                int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
-                Livros livro = new Livros();
-                livro.pegarEmp(id);
-                DataTable tabela = livro.dispoEmprestimo();
-                viewLivrosDisp.DataSource = tabela;
+                ConfirmarEmp confirmarEmp = new ConfirmarEmp();
+                DialogResult result = confirmarEmp.ShowDialog();
+                //verificando se o usuario foi validado
+                if (!(result == DialogResult.Cancel) )
+                {
+                    DataGridViewRow linha = viewLivrosDisp.SelectedRows[0];
+                    int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
+                    Livros livro = new Livros();
+                    string matricula = confirmarEmp.pegando_dados();
+                    livro.Idlivro = id;
+                    livro.pegarEmp(livro, matricula);
+                    DataTable tabela = livro.dispoEmprestimo();
+                    viewLivrosDisp.DataSource = tabela;
+                }
 
             }
         }
