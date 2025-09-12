@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `biblioteca` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `biblioteca`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: biblioteca
@@ -31,7 +29,7 @@ CREATE TABLE `livros` (
   `emprestado` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_livro`),
   UNIQUE KEY `titulo` (`titulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +38,7 @@ CREATE TABLE `livros` (
 
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
-INSERT INTO `livros` VALUES (1,'Italo','Ben 10',0),(2,'J.K. Rowling','Harry Potter ',0),(3,'George Orwell','1984',1),(4,'J.R.R. Tolkien','O Senhor dos Anéis',0),(5,'Dan Brown','O Código Da Vinci',1),(6,'Agatha Christie','Assassinato',0),(7,'Paulo Coelho','O Alquimista',1),(8,'Isaac Asimov','Fundação',0),(9,'Gabriel García','Cem Anos de Solidão',0),(10,'F. Scott Fitzgerald','O Grande Gatsby',1),(11,'H.P. Lovecraft','O Chamado de Cthulhu',0),(12,'davi','viado',0);
+INSERT INTO `livros` VALUES (3,'George Orwell','1984',1),(8,'Isaac Asimov','Fundação',0),(9,'Gabriel García','Cem Anos de Solidão',0),(11,'H.P. Lovecraft','O Chamado de Cthulhu',0);
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-09 16:02:50
+-- Dump completed on 2025-09-12 16:03:30
