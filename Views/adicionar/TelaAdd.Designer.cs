@@ -62,7 +62,7 @@
             this.txtTitulo.Location = new System.Drawing.Point(145, 173);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(148, 20);
-            this.txtTitulo.TabIndex = 2;
+            this.txtTitulo.TabIndex = 1;
             this.txtTitulo.TextChanged += new System.EventHandler(this.txtTitulo_TextChanged);
             // 
             // txtAutor
@@ -70,7 +70,7 @@
             this.txtAutor.Location = new System.Drawing.Point(466, 173);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(148, 20);
-            this.txtAutor.TabIndex = 3;
+            this.txtAutor.TabIndex = 2;
             this.txtAutor.TextChanged += new System.EventHandler(this.txtAutor_TextChanged);
             // 
             // btnAdicionar
@@ -79,7 +79,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(174, 246);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(91, 31);
-            this.btnAdicionar.TabIndex = 4;
+            this.btnAdicionar.TabIndex = 3;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -90,7 +90,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(495, 246);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(91, 31);
-            this.btnLimpar.TabIndex = 5;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             // 
@@ -99,7 +99,7 @@
             this.btnEsc.Location = new System.Drawing.Point(13, 13);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(75, 23);
-            this.btnEsc.TabIndex = 6;
+            this.btnEsc.TabIndex = 5;
             this.btnEsc.Text = "Voltar";
             this.btnEsc.UseVisualStyleBackColor = true;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);

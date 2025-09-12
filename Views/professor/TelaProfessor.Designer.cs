@@ -42,7 +42,7 @@
             this.btnEsc.Location = new System.Drawing.Point(12, 12);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(75, 23);
-            this.btnEsc.TabIndex = 1;
+            this.btnEsc.TabIndex = 4;
             this.btnEsc.Text = "Voltar";
             this.btnEsc.UseVisualStyleBackColor = true;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
@@ -52,7 +52,7 @@
             this.btnAdd.Location = new System.Drawing.Point(206, 384);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 38);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Adicionar livro";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnPegar_Click);
@@ -62,7 +62,7 @@
             this.txtBusca.Location = new System.Drawing.Point(283, 63);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(248, 20);
-            this.txtBusca.TabIndex = 9;
+            this.txtBusca.TabIndex = 1;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // label1
@@ -89,7 +89,7 @@
             this.btnDel.Location = new System.Drawing.Point(447, 384);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(147, 38);
-            this.btnDel.TabIndex = 11;
+            this.btnDel.TabIndex = 3;
             this.btnDel.Text = "Deletar";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);

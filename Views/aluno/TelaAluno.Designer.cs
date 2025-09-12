@@ -41,7 +41,7 @@
             this.btnEsc.Location = new System.Drawing.Point(12, 12);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(75, 23);
-            this.btnEsc.TabIndex = 2;
+            this.btnEsc.TabIndex = 4;
             this.btnEsc.Text = "Voltar";
             this.btnEsc.UseVisualStyleBackColor = true;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
@@ -49,9 +49,9 @@
             // viewResult
             // 
             this.viewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewResult.Location = new System.Drawing.Point(185, 89);
+            this.viewResult.Location = new System.Drawing.Point(147, 89);
             this.viewResult.Name = "viewResult";
-            this.viewResult.Size = new System.Drawing.Size(388, 267);
+            this.viewResult.Size = new System.Drawing.Size(451, 267);
             this.viewResult.TabIndex = 3;
             this.viewResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewResult_CellContentClick);
             // 
@@ -70,7 +70,7 @@
             this.txtBusca.Location = new System.Drawing.Point(262, 55);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(248, 20);
-            this.txtBusca.TabIndex = 5;
+            this.txtBusca.TabIndex = 1;
             this.txtBusca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnPegar
@@ -78,7 +78,7 @@
             this.btnPegar.Location = new System.Drawing.Point(307, 378);
             this.btnPegar.Name = "btnPegar";
             this.btnPegar.Size = new System.Drawing.Size(147, 38);
-            this.btnPegar.TabIndex = 6;
+            this.btnPegar.TabIndex = 2;
             this.btnPegar.Text = "Pegar emprestado";
             this.btnPegar.UseVisualStyleBackColor = true;
             this.btnPegar.Click += new System.EventHandler(this.btnPegar_Click);

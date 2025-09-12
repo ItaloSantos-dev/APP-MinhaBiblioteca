@@ -89,7 +89,7 @@ namespace MinhaBiblioteca.Controllers
 
         }
 
-        private bool confirmarPossibilidade(Usuario usuario)
+        private bool confirmarPossibilidadeUsuario(Usuario usuario)
         {
             conect.abrirConexao();
             string select = "SELECT *FROM usuarios WHERE identificador = @identi;";
@@ -106,7 +106,7 @@ namespace MinhaBiblioteca.Controllers
                 }
                 else
                 {
-                    
+                    MessageBox.Show("O livro que você selecionou está atualmente em um empréstimo");
                     return false;
                 }
                 
@@ -120,12 +120,41 @@ namespace MinhaBiblioteca.Controllers
 
         }
 
+        public bool confirmarPossibilidadeLivros(Livro livro)
+        {
+            conect.abrirConexao();
+            string select = "SELECT *FROM livros WHERE id_livro = @id;";
+            MySqlCommand cmd = new MySqlCommand(select, conect.con);
+            cmd.Parameters.AddWithValue("@id", livro.Idlivro);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            conect.fecharConexao();
+            if(reader.Read())
+            {
+                var conf = Convert.ToInt32(  reader["emprestado"]);
+                if(conf == 0)
+                {
+                    
+                    return true ;
+                }
+                else
+                {
+                    MessageBox.Show("O livro que você selecionou está atualmente em um empréstimo");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você precisa devolver o livro que você pegou, para fazer outro empréstimo!");
+                return false;
+            }
+        }
+
         public void pegarEmp(Livro livro, Usuario usuario)
         {
             
-            bool confirmacao = confirmarPossibilidade(usuario);
-
-            if (confirmacao)
+            bool confirmacaousuario = confirmarPossibilidadeUsuario(usuario);
+            bool confirmacaolivro = confirmarPossibilidadeLivros( livro);
+            if (confirmacaousuario && confirmacaolivro)
             {
                 conect.abrirConexao();
                 string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
@@ -153,7 +182,7 @@ namespace MinhaBiblioteca.Controllers
             }
             else
             {
-                MessageBox.Show("Você precisa devolver o livro que você pegou, para fazer outro empréstimo!");
+                MessageBox.Show("Algo deu errado, tente novamente!");
             }
         }
 

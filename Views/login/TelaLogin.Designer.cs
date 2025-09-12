@@ -51,7 +51,7 @@
             this.txtSenha.Location = new System.Drawing.Point(318, 183);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // label1
@@ -78,7 +78,7 @@
             this.txtUser.Location = new System.Drawing.Point(318, 113);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 4;
+            this.txtUser.TabIndex = 1;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // btnEntrar
@@ -88,7 +88,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(332, 242);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.button1_Click);
@@ -100,7 +100,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(328, 294);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(82, 31);
-            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Resgistrar-se";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);

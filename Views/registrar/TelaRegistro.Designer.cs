@@ -137,7 +137,7 @@
             this.btnReg.Location = new System.Drawing.Point(344, 317);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(78, 23);
-            this.btnReg.TabIndex = 11;
+            this.btnReg.TabIndex = 6;
             this.btnReg.Text = "Registrar";
             this.btnReg.UseVisualStyleBackColor = false;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
@@ -147,7 +147,7 @@
             this.btnEsc.Location = new System.Drawing.Point(13, 13);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(75, 23);
-            this.btnEsc.TabIndex = 12;
+            this.btnEsc.TabIndex = 7;
             this.btnEsc.Text = "Voltar";
             this.btnEsc.UseVisualStyleBackColor = true;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);

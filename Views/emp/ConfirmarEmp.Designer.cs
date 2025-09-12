@@ -43,7 +43,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(186, 205);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -53,7 +53,7 @@
             this.txtUser.Location = new System.Drawing.Point(172, 76);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 9;
+            this.txtUser.TabIndex = 1;
             // 
             // lbl
             // 
@@ -78,16 +78,17 @@
             this.txtSenha.Location = new System.Drawing.Point(172, 146);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 6;
+            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(158, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.Size = new System.Drawing.Size(136, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "CONDIRME SEUS DADOS";
+            this.label2.Text = "CONFIRME SEUS DADOS";
             // 
             // ConfirmarEmp
             // 
