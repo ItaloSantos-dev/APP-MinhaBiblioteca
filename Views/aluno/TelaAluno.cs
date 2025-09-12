@@ -1,4 +1,6 @@
-﻿using MinhaBiblioteca.Forms.emp;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Forms;
+using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,36 +16,23 @@ namespace MinhaBiblioteca
 {
     public partial class TelaAluno : Form
     {
-        
+        LivrosController lc = new LivrosController();
+
         public TelaAluno()
         {
             
             InitializeComponent();
+            attLista();
             this.FormClosed += (s, e) => System.Windows.Forms.Application.Exit();
             
 
         }
-        
-
-        private void button1_Click(object sender, EventArgs e)
+        public void attLista()
         {
-            
-            TelaBusca telabusca = new TelaBusca();
-            telabusca.Owner = this;
-            telabusca.Show();
-            this.Hide();
-
+            DataTable tabela = lc.exibirLivros();
+            viewResult.DataSource = tabela;
         }
 
-        private void btnEmp_Click(object sender, EventArgs e)
-        {
-            
-            TelaEmp telaemp = new TelaEmp();
-            telaemp.Owner= this;
-            telaemp.Show();
-            this.Hide();
-            
-        }
 
         private void btnEsc_Click(object sender, EventArgs e)
         {
@@ -53,6 +42,36 @@ namespace MinhaBiblioteca
 
 
             
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Livro buscarLivro = new Livro();
+            string titulobuscado = txtBusca.Text;
+            DataTable tabela = lc.buscarLivro(titulobuscado);
+            viewResult.DataSource = tabela;
+        }
+
+        private void btnPegar_Click(object sender, EventArgs e)
+        {
+            if (viewResult.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(viewResult.SelectedRows[0].Cells["id_livro"].Value);
+                ConfirmarEmp conf_emp = new ConfirmarEmp(id);
+                conf_emp.ShowDialog();
+                attLista();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha!");
+            }
+        }
+
+        private void viewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

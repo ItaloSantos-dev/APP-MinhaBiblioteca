@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Models_tabelas_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,18 @@ namespace MinhaBiblioteca
 {
     public partial class TelaProfessor : Form
     {
+        LivrosController lc = new LivrosController();
         public TelaProfessor()
         {
             InitializeComponent();
+            attLista();
             this.FormClosed += (s, e) => System.Windows.Forms.Application.Exit();
 
+        }
+        public void attLista()
+        {
+            DataTable tabela = lc.exibirLivros();
+            viewResult.DataSource = tabela;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -36,12 +45,54 @@ namespace MinhaBiblioteca
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void TelaProfessor_Load(object sender, EventArgs e)
         {
-            TelaDel teladel = new TelaDel();
-            teladel.Owner = this;
-            teladel.Show();
-            this.Hide();
+
+        }
+
+        private void btnPegar_Click(object sender, EventArgs e)
+        {
+            TelaAdd telaAdd = new TelaAdd();
+            telaAdd.ShowDialog();
+            attLista();
+        }
+
+        private void viewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Livro buscarLivro = new Livro();
+            string titulobuscado = txtBusca.Text;
+            DataTable tabela = lc.buscarLivro(titulobuscado);
+            viewResult.DataSource = tabela;
+            
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (viewResult.SelectedRows.Count > 0)
+            {
+                DataGridViewRow linha = viewResult.SelectedRows[0];
+                int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
+                Livro livro = new Livro();
+                livro.Idlivro = id;
+                LivrosController lc = new LivrosController();
+                lc.deletarLivro(livro);
+                txtBusca.Text = "";
+                viewResult.DataSource = null;
+                attLista();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linnha");
+            }
         }
     }
 }

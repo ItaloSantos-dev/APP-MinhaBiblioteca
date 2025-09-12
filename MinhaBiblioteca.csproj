@@ -64,12 +64,6 @@
     <Compile Include="Views\emp\ConfirmarEmp.Designer.cs">
       <DependentUpon>ConfirmarEmp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\emp\TelaEmp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\emp\TelaEmp.Designer.cs">
-      <DependentUpon>TelaEmp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\registrar\TelaRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,18 +82,6 @@
     </Compile>
     <Compile Include="Views\aluno\TelaAluno.Designer.cs">
       <DependentUpon>TelaAluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\buscar\TelaBusca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\buscar\TelaBusca.Designer.cs">
-      <DependentUpon>TelaBusca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\deletar\TelaDel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\deletar\TelaDel.Designer.cs">
-      <DependentUpon>TelaDel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\login\TelaLogin.cs">
       <SubType>Form</SubType>
@@ -124,17 +106,8 @@
     <EmbeddedResource Include="Views\aluno\TelaAluno.resx">
       <DependentUpon>TelaAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\buscar\TelaBusca.resx">
-      <DependentUpon>TelaBusca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\deletar\TelaDel.resx">
-      <DependentUpon>TelaDel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\emp\ConfirmarEmp.resx">
       <DependentUpon>ConfirmarEmp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\emp\TelaEmp.resx">
-      <DependentUpon>TelaEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

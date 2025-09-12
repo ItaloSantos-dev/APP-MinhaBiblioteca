@@ -28,32 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnEmp = new System.Windows.Forms.Button();
             this.btnEsc = new System.Windows.Forms.Button();
+            this.viewResult = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.btnPegar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.viewResult)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBuscar.Location = new System.Drawing.Point(300, 134);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(156, 53);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Text = "BUSAR LIVRO";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEmp
-            // 
-            this.btnEmp.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEmp.Location = new System.Drawing.Point(300, 241);
-            this.btnEmp.Name = "btnEmp";
-            this.btnEmp.Size = new System.Drawing.Size(156, 53);
-            this.btnEmp.TabIndex = 1;
-            this.btnEmp.Text = "FAZER EMPRÉSTIMO";
-            this.btnEmp.UseVisualStyleBackColor = false;
-            this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
             // 
             // btnEsc
             // 
@@ -65,24 +46,66 @@
             this.btnEsc.UseVisualStyleBackColor = true;
             this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
             // 
+            // viewResult
+            // 
+            this.viewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewResult.Location = new System.Drawing.Point(185, 89);
+            this.viewResult.Name = "viewResult";
+            this.viewResult.Size = new System.Drawing.Size(388, 267);
+            this.viewResult.TabIndex = 3;
+            this.viewResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewResult_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(259, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "DIGITE TÍTULO DO LIVRO QUE VOCÊ BUSCA";
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(262, 55);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(248, 20);
+            this.txtBusca.TabIndex = 5;
+            this.txtBusca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnPegar
+            // 
+            this.btnPegar.Location = new System.Drawing.Point(307, 378);
+            this.btnPegar.Name = "btnPegar";
+            this.btnPegar.Size = new System.Drawing.Size(147, 38);
+            this.btnPegar.TabIndex = 6;
+            this.btnPegar.Text = "Pegar emprestado";
+            this.btnPegar.UseVisualStyleBackColor = true;
+            this.btnPegar.Click += new System.EventHandler(this.btnPegar_Click);
+            // 
             // TelaAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPegar);
+            this.Controls.Add(this.txtBusca);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.viewResult);
             this.Controls.Add(this.btnEsc);
-            this.Controls.Add(this.btnEmp);
-            this.Controls.Add(this.btnBuscar);
             this.Name = "TelaAluno";
             this.Text = "MinhaBiblioteca-Aluno";
+            ((System.ComponentModel.ISupportInitialize)(this.viewResult)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnEmp;
         private System.Windows.Forms.Button btnEsc;
+        private System.Windows.Forms.DataGridView viewResult;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.Button btnPegar;
     }
 }

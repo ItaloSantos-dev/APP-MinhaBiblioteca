@@ -42,11 +42,12 @@ namespace MinhaBiblioteca
             lc.addLivro(livros);
             txtAutor.Text = "";
             txtTitulo.Text = "";
+            this.Hide();
+
         }
 
         private void btnEsc_Click(object sender, EventArgs e)
         {
-            Owner.Show();
             this.Hide();
         }
 

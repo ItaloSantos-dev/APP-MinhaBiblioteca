@@ -76,7 +76,7 @@ namespace MinhaBiblioteca.Controllers
                 }
                 else if (tipo == "admin")
                 {
-                    
+                    MessageBox.Show("Iai ADM");
                 }
             }
             else

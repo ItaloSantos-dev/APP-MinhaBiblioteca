@@ -1,5 +1,6 @@
 ﻿using MinhaBiblioteca.Models_tabelas_;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -154,6 +155,18 @@ namespace MinhaBiblioteca.Controllers
             {
                 MessageBox.Show("Você precisa devolver o livro que você pegou, para fazer outro empréstimo!");
             }
+        }
+
+        public DataTable exibirLivros()
+        {
+            conect.abrirConexao();
+            string select = "SELECT *FROM livros;";
+            MySqlCommand cmd = new MySqlCommand(select, conect.con);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable tabela = new DataTable();
+            adapter.Fill(tabela);
+            conect.fecharConexao();
+            return tabela;
         }
 
     }

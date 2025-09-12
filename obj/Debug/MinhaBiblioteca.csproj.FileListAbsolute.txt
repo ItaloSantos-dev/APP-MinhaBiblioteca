@@ -30,8 +30,6 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.c
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.exe.config
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.TelaAdd.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.TelaAluno.resources
-D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.TelaBusca.resources
-D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.TelaDel.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.MinhaBiblioteca.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Properties.Resources.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.TelaProfessor.resources
@@ -40,7 +38,6 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.c
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBib.CE4EFD13.Up2Date
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.exe
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.pdb
-D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.emp.TelaEmp.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.registrar.TelaRegistro.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Forms.ConfirmarEmp.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Debug\MinhaBiblioteca.Views.adm.TelaAdm.resources
