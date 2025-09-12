@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Models_tabelas_;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,9 @@ namespace MinhaBiblioteca
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string titulobuscado = txtLTituloBuscado.Text;
-            Livros livros = new Livros();
-            DataTable tabela = livros.buscarLivro(titulobuscado);
+            Livro livros = new Livro();
+            LivrosController lc = new LivrosController();
+            DataTable tabela = lc.buscarLivro(titulobuscado);
             viewResult.DataSource = tabela;
 
         }
@@ -46,8 +48,10 @@ namespace MinhaBiblioteca
             {
                 DataGridViewRow linha = viewResult.SelectedRows[0];
                 int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
-                Livros livros = new Livros();
-                livros.deletarLivro(id);
+                Livro livro = new Livro();
+                livro.Idlivro = id;
+                LivrosController lc = new LivrosController();
+                lc.deletarLivro(livro);
                 txtLTituloBuscado.Text = "";
                 viewResult.DataSource = null;
 

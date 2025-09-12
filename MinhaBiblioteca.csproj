@@ -48,87 +48,98 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco\Conexao.cs" />
-    <Compile Include="Forms\emp\ConfirmarEmp.cs">
+    <Compile Include="Controllers\LivrosController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Models%28tabelas%29\Sessao.cs" />
+    <Compile Include="Models%28tabelas%29\Usuario.cs" />
+    <Compile Include="Views\adm\TelaAdm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\emp\ConfirmarEmp.Designer.cs">
+    <Compile Include="Views\adm\TelaAdm.Designer.cs">
+      <DependentUpon>TelaAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\emp\ConfirmarEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\emp\ConfirmarEmp.Designer.cs">
       <DependentUpon>ConfirmarEmp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\emp\TelaEmp.cs">
+    <Compile Include="Views\emp\TelaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\emp\TelaEmp.Designer.cs">
+    <Compile Include="Views\emp\TelaEmp.Designer.cs">
       <DependentUpon>TelaEmp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\registrar\TelaRegistro.cs">
+    <Compile Include="Views\registrar\TelaRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\registrar\TelaRegistro.Designer.cs">
+    <Compile Include="Views\registrar\TelaRegistro.Designer.cs">
       <DependentUpon>TelaRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models%28tabelas%29\Alunos.cs" />
-    <Compile Include="Models%28tabelas%29\Livros.cs" />
-    <Compile Include="Forms\adicionar\TelaAdd.cs">
+    <Compile Include="Models%28tabelas%29\Livro.cs" />
+    <Compile Include="Views\adicionar\TelaAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\adicionar\TelaAdd.Designer.cs">
+    <Compile Include="Views\adicionar\TelaAdd.Designer.cs">
       <DependentUpon>TelaAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\aluno\TelaAluno.cs">
+    <Compile Include="Views\aluno\TelaAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\aluno\TelaAluno.Designer.cs">
+    <Compile Include="Views\aluno\TelaAluno.Designer.cs">
       <DependentUpon>TelaAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\buscar\TelaBusca.cs">
+    <Compile Include="Views\buscar\TelaBusca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\buscar\TelaBusca.Designer.cs">
+    <Compile Include="Views\buscar\TelaBusca.Designer.cs">
       <DependentUpon>TelaBusca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\deletar\TelaDel.cs">
+    <Compile Include="Views\deletar\TelaDel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\deletar\TelaDel.Designer.cs">
+    <Compile Include="Views\deletar\TelaDel.Designer.cs">
       <DependentUpon>TelaDel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\login\TelaLogin.cs">
+    <Compile Include="Views\login\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\login\TelaLogin.Designer.cs">
+    <Compile Include="Views\login\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models%28tabelas%29\Professores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\professor\TelaProfessor.cs">
+    <Compile Include="Views\professor\TelaProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\professor\TelaProfessor.Designer.cs">
+    <Compile Include="Views\professor\TelaProfessor.Designer.cs">
       <DependentUpon>TelaProfessor.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\adicionar\TelaAdd.resx">
+    <EmbeddedResource Include="Views\adicionar\TelaAdd.resx">
       <DependentUpon>TelaAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\aluno\TelaAluno.resx">
+    <EmbeddedResource Include="Views\adm\TelaAdm.resx">
+      <DependentUpon>TelaAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\aluno\TelaAluno.resx">
       <DependentUpon>TelaAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\buscar\TelaBusca.resx">
+    <EmbeddedResource Include="Views\buscar\TelaBusca.resx">
       <DependentUpon>TelaBusca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\deletar\TelaDel.resx">
+    <EmbeddedResource Include="Views\deletar\TelaDel.resx">
       <DependentUpon>TelaDel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\emp\ConfirmarEmp.resx">
+    <EmbeddedResource Include="Views\emp\ConfirmarEmp.resx">
       <DependentUpon>ConfirmarEmp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\emp\TelaEmp.resx">
+    <EmbeddedResource Include="Views\emp\TelaEmp.resx">
       <DependentUpon>TelaEmp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\login\TelaLogin.resx">
+    <EmbeddedResource Include="Views\login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\registrar\TelaRegistro.resx">
+    <EmbeddedResource Include="Views\registrar\TelaRegistro.resx">
       <DependentUpon>TelaRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,7 +151,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\professor\TelaProfessor.resx">
+    <EmbeddedResource Include="Views\professor\TelaProfessor.resx">
       <DependentUpon>TelaProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -14,25 +14,30 @@ namespace MinhaBiblioteca
 {
     public partial class TelaAluno : Form
     {
+        
         public TelaAluno()
         {
+            
             InitializeComponent();
             this.FormClosed += (s, e) => System.Windows.Forms.Application.Exit();
-            ;
+            
 
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TelaBusca telabusca = new TelaBusca();
-            telabusca.Show();
-            telabusca.Owner = this;
             
+            TelaBusca telabusca = new TelaBusca();
+            telabusca.Owner = this;
+            telabusca.Show();
+            this.Hide();
+
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
+            
             TelaEmp telaemp = new TelaEmp();
             telaemp.Owner= this;
             telaemp.Show();

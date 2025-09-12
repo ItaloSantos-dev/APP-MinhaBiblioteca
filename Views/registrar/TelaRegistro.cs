@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Models_tabelas_;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,33 +85,13 @@ namespace MinhaBiblioteca.Forms.registrar
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text;
-            string cpf = txtCpf.Text;
-            string identificador = txtIden.Text;
-            if (txtCpf.Text == "" || txtNome.Text == "" || txtIden.Text == "")
-            {
-                MessageBox.Show("Um dos campos está vazio!");
-                btnReg.Enabled = false;
-            }
-            if (radioAluno.Checked)
-            {
-                Alunos aluno = new Alunos();
-                aluno.Nome = nome;
-                aluno.Cpf = cpf;
-                aluno.Matricula = identificador;
-                aluno.cadastrarAluno(aluno);
-            }
-            else if (radioProf.Checked)
-            {
-                Professores professor = new Professores();
-                professor.Nome = nome;
-                professor.Cpf = cpf;
-                professor.Registro = identificador;
-                professor.registrarProfessor(professor);
-            }
-            txtNome.Text = "";
-            txtCpf.Text = "";
-            txtIden.Text = "";
+            RegistroController rc = new RegistroController();
+            Usuario usuario = new Usuario();
+            usuario.Nome = txtNome.Text;
+            usuario.Tipo = radioAluno.Checked ? "aluno" : radioProf.Checked ? "professor" : "";
+            usuario.Identificador = txtIden.Text;
+            usuario.Cpf = txtCpf.Text;
+            rc.Registrar(usuario);
 
         }
 

@@ -81,6 +81,7 @@
             this.viewResult.Name = "viewResult";
             this.viewResult.Size = new System.Drawing.Size(399, 150);
             this.viewResult.TabIndex = 6;
+            this.viewResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewResult_CellContentClick);
             // 
             // btnEsc
             // 

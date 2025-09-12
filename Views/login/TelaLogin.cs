@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Forms.registrar;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Forms.registrar;
 using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
@@ -54,47 +55,8 @@ namespace MinhaBiblioteca
         {
             string usuario = txtUser.Text;
             string senha = txtSenha.Text;
-            if (usuario=="professor")
-            {
-                Professores professor = new Professores();
-                professor.Registro = senha;
-                int validacao = professor.validaLogin(professor);
-                if (validacao==1)
-                {
-                    TelaProfessor telaProfessor = new TelaProfessor();
-                    telaProfessor.Owner = this;
-                    this.Hide();
-                    telaProfessor.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuário ou senha inválido");
-
-                }
-            }
-            else
-            {
-                Alunos aluno = new Alunos();
-                aluno.Nome = usuario;
-                aluno.Matricula = senha;
-                int validacao = aluno.validarLogin(aluno);
-                if (validacao == 1)
-                {
-                    this.Hide();
-                    TelaAluno telaaluno = new TelaAluno();
-                    telaaluno.Owner = this;
-                    telaaluno.Show();
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Usuário ou senha inválido");
-                }
-            }
-            
-           
-           
-
+            RegistroController rc = new RegistroController();
+            rc.validarLogin(usuario, senha, this);
 
         }
 
@@ -106,9 +68,14 @@ namespace MinhaBiblioteca
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
            TelaRegistro telaRegistro = new TelaRegistro();
-            telaRegistro.Owner = this;
-            this.Hide();
-            telaRegistro.Show();
+           telaRegistro.Owner = this;
+           this.Hide();
+           telaRegistro.Show();
+        }
+
+        private void btnAdm_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

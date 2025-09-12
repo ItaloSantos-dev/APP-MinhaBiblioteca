@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Models_tabelas_;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Models_tabelas_;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,10 @@ namespace MinhaBiblioteca
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Livros buscarLivro = new Livros();
+            Livro buscarLivro = new Livro();
             string titulobuscado = txtLTituloBuscado.Text;
-            DataTable tabela =buscarLivro.buscarLivro(titulobuscado);
+            LivrosController lc = new LivrosController();
+            DataTable tabela =lc.buscarLivro(titulobuscado);
             viewResult.DataSource = tabela;
 
         }
@@ -39,9 +41,13 @@ namespace MinhaBiblioteca
         private void btnEsc_Click(object sender, EventArgs e)
         {
             
-            TelaAluno telaAluno = new TelaAluno();
             Owner.Show();
             this.Hide();
+        }
+
+        private void viewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

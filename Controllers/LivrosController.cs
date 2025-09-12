@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MinhaBiblioteca.Models_tabelas_;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,22 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MinhaBiblioteca.Models_tabelas_
+namespace MinhaBiblioteca.Controllers
 {
-    internal class Livros
+    internal class LivrosController
     {
-        private int idlivro;
-        private string autor;
-        private string titulo;
-        private bool emprestado;
         Conexao conect = new Conexao();
-
-        public int Idlivro { get => idlivro; set=>idlivro = value; }
-        public string Autor { get => autor; set => autor = value; }
-        public string Titulo { get => titulo; set => titulo=value; }
-        public bool Emprestado { get => emprestado; set=>emprestado=value; }
-
-        public DataTable  buscarLivro(string nomeLivroBuscado)
+        public DataTable buscarLivro(string nomeLivroBuscado)
         {
             //obj conexao
 
@@ -39,12 +30,12 @@ namespace MinhaBiblioteca.Models_tabelas_
             conect.fecharConexao();
             return tabela;
 
-            
+
         }
 
-        public void addLivro(Livros livro)
+        public void addLivro(Livro livro)
         {
-            
+
             conect.abrirConexao();
             string insert = "INSERT INTO livros (id_livro, autor, titulo, emprestado) values (default, @autor, @titulo, 0);";
             MySqlCommand cmd = new MySqlCommand(insert, conect.con);
@@ -62,15 +53,15 @@ namespace MinhaBiblioteca.Models_tabelas_
 
             }
         }
-        public void deletarLivro(int _id)
+        public void deletarLivro(Livro livro)
         {
             conect.abrirConexao();
             string delete = "DELETE FROM livros WHERE id_livro = @id;";
             MySqlCommand cmd = new MySqlCommand(delete, conect.con);
-            cmd.Parameters.AddWithValue("@id", _id);
+            cmd.Parameters.AddWithValue("@id", livro.Idlivro);
             int resultado = cmd.ExecuteNonQuery();
             conect.fecharConexao();
-            if(resultado > 0)
+            if (resultado > 0)
             {
                 MessageBox.Show("Livro excluído com sucesso!");
 
@@ -97,35 +88,73 @@ namespace MinhaBiblioteca.Models_tabelas_
 
         }
 
-        public void pegarEmp(Livros livro, String _matricula)
+        private bool confirmarPossibilidade(Usuario usuario)
         {
             conect.abrirConexao();
-            string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
-            MySqlCommand cmd = new MySqlCommand(update, conect.con);
-            cmd.Parameters.AddWithValue("@_id", livro.idlivro);
-            int resultado1 = cmd.ExecuteNonQuery();
-
-            update = "UPDATE alunos SET livro_pego = @_id where matricula = @_matricula;";
-            cmd = new MySqlCommand(update, conect.con);
-            cmd.Parameters.AddWithValue("@_id", livro.idlivro);
-            cmd.Parameters.AddWithValue("@_matricula", _matricula);
-            int resultado2 = cmd.ExecuteNonQuery();
-
+            string select = "SELECT *FROM usuarios WHERE identificador = @identi;";
+            MySqlCommand cmd = new MySqlCommand( select, conect.con);
+            cmd.Parameters.AddWithValue("@identi", usuario.Identificador);
+            MySqlDataReader reader = cmd.ExecuteReader();
             conect.fecharConexao();
-            if(resultado1 > 0 && resultado2>0)
-            {
-
-
-                MessageBox.Show("Livro pego emprestado com sucesso");
+            if (reader.Read()) { 
+                var confi = reader["livro_pego"];
+                if (confi == DBNull.Value)
+                {
+                    
+                    return true;
+                }
+                else
+                {
+                    
+                    return false;
+                }
+                
+            
             }
             else
             {
-                MessageBox.Show("Não foi possível concluir o empréstimo");
-
+                
+                return false;
             }
+
         }
 
+        public void pegarEmp(Livro livro, Usuario usuario)
+        {
+            
+            bool confirmacao = confirmarPossibilidade(usuario);
 
+            if (confirmacao)
+            {
+                conect.abrirConexao();
+                string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
+                MySqlCommand cmd = new MySqlCommand(update, conect.con);
+                cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
+                int resultado1 = cmd.ExecuteNonQuery();
+
+                update = "UPDATE usuarios SET livro_pego = @_id where identificador = @_identificador;";
+                cmd = new MySqlCommand(update, conect.con);
+                cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
+                cmd.Parameters.AddWithValue("@_identificador", usuario.Identificador);
+                int resultado2 = cmd.ExecuteNonQuery();
+
+                conect.fecharConexao();
+                if (resultado1 > 0 && resultado2 > 0)
+                {
+
+
+                    MessageBox.Show("Livro pego emprestado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível concluir o empréstimo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você precisa devolver o livro que você pegou, para fazer outro empréstimo!");
+            }
+        }
 
     }
 }

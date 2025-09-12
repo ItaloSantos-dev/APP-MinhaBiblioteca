@@ -1,4 +1,5 @@
-﻿using MinhaBiblioteca.Models_tabelas_;
+﻿using MinhaBiblioteca.Controllers;
+using MinhaBiblioteca.Models_tabelas_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,10 +35,11 @@ namespace MinhaBiblioteca
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            Livros livros = new Livros();
+            Livro livros = new Livro();
             livros.Titulo = txtTitulo.Text;
             livros.Autor = txtAutor.Text;
-            livros.addLivro(livros);
+            LivrosController lc = new LivrosController();
+            lc.addLivro(livros);
             txtAutor.Text = "";
             txtTitulo.Text = "";
         }

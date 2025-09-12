@@ -86,6 +86,7 @@
             this.Controls.Add(this.viewLivrosDisp);
             this.Name = "TelaEmp";
             this.Text = "TelaEmp";
+            this.Load += new System.EventHandler(this.TelaEmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewLivrosDisp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
