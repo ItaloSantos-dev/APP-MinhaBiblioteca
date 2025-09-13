@@ -106,7 +106,7 @@ namespace MinhaBiblioteca.Controllers
                 }
                 else
                 {
-                    MessageBox.Show("O livro que você selecionou está atualmente em um empréstimo");
+                    
                     return false;
                 }
                 
@@ -138,52 +138,57 @@ namespace MinhaBiblioteca.Controllers
                 }
                 else
                 {
-                    MessageBox.Show("O livro que você selecionou está atualmente em um empréstimo");
+                    
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Você precisa devolver o livro que você pegou, para fazer outro empréstimo!");
+                
                 return false;
             }
         }
 
         public void pegarEmp(Livro livro, Usuario usuario)
         {
-            
-            bool confirmacaousuario = confirmarPossibilidadeUsuario(usuario);
-            bool confirmacaolivro = confirmarPossibilidadeLivros( livro);
-            if (confirmacaousuario && confirmacaolivro)
+
+            if (confirmarPossibilidadeUsuario(usuario))
             {
-                conect.abrirConexao();
-                string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
-                MySqlCommand cmd = new MySqlCommand(update, conect.con);
-                cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
-                int resultado1 = cmd.ExecuteNonQuery();
-
-                update = "UPDATE usuarios SET livro_pego = @_id where identificador = @_identificador;";
-                cmd = new MySqlCommand(update, conect.con);
-                cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
-                cmd.Parameters.AddWithValue("@_identificador", usuario.Identificador);
-                int resultado2 = cmd.ExecuteNonQuery();
-
-                conect.fecharConexao();
-                if (resultado1 > 0 && resultado2 > 0)
+                if (confirmarPossibilidadeLivros(livro))
                 {
+                    conect.abrirConexao();
+                    string update = "UPDATE livros SET emprestado = 1 where id_livro = @_id;";
+                    MySqlCommand cmd = new MySqlCommand(update, conect.con);
+                    cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
+                    int resultado1 = cmd.ExecuteNonQuery();
+                    update = "UPDATE usuarios SET livro_pego = @_id where identificador = @_identificador;";
+                    cmd = new MySqlCommand(update, conect.con);
+                    cmd.Parameters.AddWithValue("@_id", livro.Idlivro);
+                    cmd.Parameters.AddWithValue("@_identificador", usuario.Identificador);
+                    int resultado2 = cmd.ExecuteNonQuery();
+
+                    conect.fecharConexao();
+                    if (resultado1 > 0 && resultado2 > 0)
+                    {
 
 
-                    MessageBox.Show("Livro pego emprestado com sucesso");
+                        MessageBox.Show("Livro pego emprestado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível concluir o empréstimo");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível concluir o empréstimo");
+                    MessageBox.Show("O livro que você selecionou ja está em um empréstimo!");
                 }
             }
             else
             {
-                MessageBox.Show("Algo deu errado, tente novamente!");
+                MessageBox.Show("Você precisar encerrar seu empréstimo atual para fazer outro!");
             }
+            
         }
 
         public DataTable exibirLivros()
