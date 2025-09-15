@@ -75,24 +75,7 @@ namespace MinhaBiblioteca
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (viewResult.SelectedRows.Count > 0)
-            {
-                DataGridViewRow linha = viewResult.SelectedRows[0];
-                int id = Convert.ToInt32(linha.Cells["id_livro"].Value);
-                Livro livro = new Livro();
-                livro.Idlivro = id;
-                LivrosController lc = new LivrosController();
-                lc.deletarLivro(livro);
-                txtBusca.Text = "";
-                viewResult.DataSource = null;
-                attLista();
-
-
-            }
-            else
-            {
-                MessageBox.Show("Selecione uma linnha");
-            }
+            
         }
     }
 }

@@ -59,8 +59,21 @@ namespace MinhaBiblioteca
             {
                 int id = Convert.ToInt32(viewResult.SelectedRows[0].Cells["id_livro"].Value);
                 ConfirmarEmp conf_emp = new ConfirmarEmp(id);
-                conf_emp.ShowDialog();
-                attLista();
+                DialogResult result =  conf_emp.ShowDialog();
+                if (result == DialogResult.OK) {
+                    Livro livro = new Livro();
+                    livro.Idlivro = id;
+                    Usuario usuario = new Usuario();
+                    usuario.Identificador = Sessao.Senha;
+                    lc.pegarEmp(livro, usuario);
+                    attLista();
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ou senha invalido");
+                }
+                
 
 
             }
@@ -73,6 +86,12 @@ namespace MinhaBiblioteca
         private void viewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            lc.devolverLivro();
+            attLista();
         }
     }
 }

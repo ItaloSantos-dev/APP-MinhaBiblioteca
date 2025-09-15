@@ -101,12 +101,14 @@ namespace MinhaBiblioteca.Controllers
                 var confi = reader["livro_pego"];
                 if (confi == DBNull.Value)
                 {
-                    
+                
+
                     return true;
                 }
                 else
                 {
-                    
+                
+
                     return false;
                 }
                 
@@ -201,6 +203,63 @@ namespace MinhaBiblioteca.Controllers
             adapter.Fill(tabela);
             conect.fecharConexao();
             return tabela;
+        }
+
+        public void devolverLivro()
+        {
+            conect.abrirConexao();
+            string select = "SELECT livro_pego FROM usuarios WHERE identificador = @idu;";
+            MySqlCommand cmd = new MySqlCommand( select, conect.con);
+            cmd.Parameters.AddWithValue("idu", Sessao.Senha);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                
+                var idl = reader["livro_pego"];
+                if (idl != DBNull.Value)
+                {
+                    int idlint = Convert.ToInt32(reader["livro_pego"]);
+                    reader.Close();
+                    string update = "UPDATE livros SET emprestado = 0 WHERE id_livro = @idl;";
+                    cmd = new MySqlCommand(update, conect.con);
+                    cmd.Parameters.AddWithValue("idl", idlint);
+                    int result1 = cmd.ExecuteNonQuery();
+                    if (result1 > 0)
+                    {
+                        update = "UPDATE usuarios SET livro_pego = NULL WHERE identificador = @idu;";
+                        cmd = new MySqlCommand(update, conect.con);
+                        cmd.Parameters.AddWithValue("idu", Sessao.Senha);
+                        int result2 = cmd.ExecuteNonQuery();
+                        if (result2 > 0)
+                        {
+                            MessageBox.Show("Livro devolvido com sucesso");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel encontrar este usuario");
+
+                        }
+                    }
+                    else
+                    {
+                            MessageBox.Show("Não foi possivel encontrar o id deste livro");
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Voce não pegou nenhum emprestimo");
+                }
+                
+
+            }
+            else
+            {
+                MessageBox.Show("Deu erro 3");
+
+            }
+
+
         }
 
     }

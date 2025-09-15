@@ -87,5 +87,12 @@ namespace MinhaBiblioteca.Controllers
 
 
         }
+
+        public bool confirmaDados(string userLog, string senhaLog, string userDig, string senhaDig)
+        {
+            if( userLog==userDig && senhaLog == senhaDig) { return true; }
+            else{ return false; }
+                
+        }
     }
 }

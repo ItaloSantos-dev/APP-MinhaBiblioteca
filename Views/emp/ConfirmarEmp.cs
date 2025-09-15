@@ -25,26 +25,16 @@ namespace MinhaBiblioteca.Forms
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {   
-            string usuariodig = txtUser.Text;
-            string senhadig = txtSenha.Text;
-            string usuariologado = Sessao.Usuario;
-            string senhalogada = Sessao.Senha;
-            if(usuariologado == usuariodig && senhalogada == senhadig)
+            RegistroController rc = new RegistroController();
+            if(rc.confirmaDados(Sessao.Usuario, Sessao.Senha, txtUser.Text, txtSenha.Text))
             {
-                Livro livro = new Livro();
-                livro.Idlivro = id;
-                Usuario usuario = new Usuario();
-                usuario.Identificador = senhalogada;
-                LivrosController lc = new LivrosController();
-                lc.pegarEmp(livro, usuario);
-                this.Hide();
-                
-
+                this.DialogResult = DialogResult.OK;
+                this.Close();
 
             }
             else
             {
-                MessageBox.Show("Usuario ou senha inválido!");
+                this.DialogResult= DialogResult.Cancel;
             }
 
 
