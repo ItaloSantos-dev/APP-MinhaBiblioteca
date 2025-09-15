@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS `livros`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `livros` (
   `id_livro` int NOT NULL AUTO_INCREMENT,
-  `autor` varchar(20) DEFAULT NULL,
-  `titulo` varchar(20) NOT NULL,
+  `autor` varchar(50) DEFAULT NULL,
+  `titulo` varchar(50) DEFAULT NULL,
   `emprestado` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_livro`),
   UNIQUE KEY `titulo` (`titulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `livros` (
 
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
-INSERT INTO `livros` VALUES (3,'George Orwell','1984',1),(8,'Isaac Asimov','Fundação',0),(9,'Gabriel García','Cem Anos de Solidão',0),(11,'H.P. Lovecraft','O Chamado de Cthulhu',0);
+INSERT INTO `livros` VALUES (3,'George Orwell','1984',0),(8,'Isaac Asimov','Fundação',0),(9,'Gabriel García','Cem Anos de Solidão',0),(164,'Machado de Assis','Dom Casmurro',0),(165,'José de Alencar','Iracema',0),(166,'Graciliano Ramos','Vidas Secas',0),(167,'Clarice Lispector','A Hora da Estrela',0),(168,'Jorge Amado','Gabriela, Cravo e Canela',0),(169,'Monteiro Lobato','Reinações de Narizinho',0),(170,'Rachel de Queiroz','O Quinze',0),(171,'Erico Verissimo','O Tempo e o Vento',0),(172,'Cecília Meireles','Romanceiro da Inconfidência',0),(173,'Ariano Suassuna','O Auto da Compadecida',0),(174,'Euclides da Cunha','Os Sertões',0),(175,'Manuel Bandeira','Estrela da Manhã',0),(176,'Carlos Drummond de Andrade','Alguma Poesia',0),(177,'Aluísio Azevedo','O Cortiço',0),(178,'Mário de Andrade','Macunaíma',0),(179,'Paulo Coelho','O Alquimista',0),(180,'Lygia Fagundes Telles','As Meninas',0),(181,'Rubem Fonseca','Agosto',0),(182,'Guimarães Rosa','Grande Sertão: Veredas',0),(183,'João Ubaldo Ribeiro','Viva o Povo Brasileiro',0);
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-12 16:03:30
+-- Dump completed on 2025-09-15 13:27:37
