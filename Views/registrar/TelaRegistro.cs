@@ -86,11 +86,7 @@ namespace MinhaBiblioteca.Forms.registrar
         private void btnReg_Click(object sender, EventArgs e)
         {
             RegistroController rc = new RegistroController();
-            Usuario usuario = new Usuario();
-            usuario.Nome = txtNome.Text;
-            usuario.Tipo = radioAluno.Checked ? "aluno" : radioProf.Checked ? "professor" : "";
-            usuario.Identificador = txtIden.Text;
-            usuario.Cpf = txtCpf.Text;
+            Usuario usuario = new Usuario(0, txtNome.Text, txtCpf.Text, radioAluno.Checked ? "aluno" : radioProf.Checked ? "professor" : "", txtIden.Text);
             rc.Registrar(usuario);
 
         }

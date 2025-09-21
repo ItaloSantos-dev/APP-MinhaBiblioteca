@@ -1,6 +1,6 @@
 ﻿namespace MinhaBiblioteca.Forms
 {
-    partial class ConfirmarEmp
+    partial class ConfirmarLogin
     {
         /// <summary>
         /// Required designer variable.

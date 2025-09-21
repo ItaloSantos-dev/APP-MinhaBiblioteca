@@ -217,12 +217,15 @@ namespace MinhaBiblioteca.Controllers
                 
                 var idl = reader["livro_pego"];
                 if (idl != DBNull.Value)
-                {
-                    int idlint = Convert.ToInt32(reader["livro_pego"]);
+                {   
+                    int id = Convert.ToInt32(reader["livro_pego"]);
+
+                    Livro livro = new Livro(id, "", "");
+
                     reader.Close();
                     string update = "UPDATE livros SET emprestado = 0 WHERE id_livro = @idl;";
                     cmd = new MySqlCommand(update, conect.con);
-                    cmd.Parameters.AddWithValue("idl", idlint);
+                    cmd.Parameters.AddWithValue("idl", livro.Idlivro);
                     int result1 = cmd.ExecuteNonQuery();
                     if (result1 > 0)
                     {

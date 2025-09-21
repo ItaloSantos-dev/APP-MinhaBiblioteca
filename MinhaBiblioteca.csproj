@@ -58,11 +58,11 @@
     <Compile Include="Views\adm\TelaAdm.Designer.cs">
       <DependentUpon>TelaAdm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\emp\ConfirmarEmp.cs">
+    <Compile Include="Views\emp\ConfirmarLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\emp\ConfirmarEmp.Designer.cs">
-      <DependentUpon>ConfirmarEmp.cs</DependentUpon>
+    <Compile Include="Views\emp\ConfirmarLogin.Designer.cs">
+      <DependentUpon>ConfirmarLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\registrar\TelaRegistro.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="Views\aluno\TelaAluno.resx">
       <DependentUpon>TelaAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\emp\ConfirmarEmp.resx">
-      <DependentUpon>ConfirmarEmp.cs</DependentUpon>
+    <EmbeddedResource Include="Views\emp\ConfirmarLogin.resx">
+      <DependentUpon>ConfirmarLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

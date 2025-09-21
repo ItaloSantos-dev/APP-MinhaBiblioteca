@@ -47,7 +47,6 @@ namespace MinhaBiblioteca
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Livro buscarLivro = new Livro();
             string titulobuscado = txtBusca.Text;
             DataTable tabela = lc.buscarLivro(titulobuscado);
             viewResult.DataSource = tabela;
@@ -58,13 +57,14 @@ namespace MinhaBiblioteca
             if (viewResult.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(viewResult.SelectedRows[0].Cells["id_livro"].Value);
-                ConfirmarEmp conf_emp = new ConfirmarEmp(id);
+                string titulo = viewResult.SelectedRows[0].Cells["titulo"].Value.ToString();
+                string autor = viewResult.SelectedRows[0].Cells["autor"].Value.ToString();
+
+                ConfirmarLogin conf_emp = new ConfirmarLogin(id);
                 DialogResult result =  conf_emp.ShowDialog();
                 if (result == DialogResult.OK) {
-                    Livro livro = new Livro();
-                    livro.Idlivro = id;
-                    Usuario usuario = new Usuario();
-                    usuario.Identificador = Sessao.Senha;
+                    Livro livro = new Livro(id, titulo, autor);
+                    Usuario usuario = new Usuario(0, Sessao.Usuario,"","", Sessao.Senha);
                     lc.pegarEmp(livro, usuario);
                     attLista();
 

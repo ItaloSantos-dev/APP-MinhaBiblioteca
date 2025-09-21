@@ -35,9 +35,7 @@ namespace MinhaBiblioteca
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            Livro livros = new Livro();
-            livros.Titulo = txtTitulo.Text;
-            livros.Autor = txtAutor.Text;
+            Livro livros = new Livro(0, txtTitulo.Text, txtAutor.Text);
             LivrosController lc = new LivrosController();
             lc.addLivro(livros);
             txtAutor.Text = "";

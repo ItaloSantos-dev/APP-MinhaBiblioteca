@@ -16,13 +16,18 @@ namespace MinhaBiblioteca.Models_tabelas_
         private string titulo;
         private bool emprestado;
         
-
+        
         public int Idlivro { get => idlivro; set=>idlivro = value; }
         public string Autor { get => autor; set => autor = value; }
         public string Titulo { get => titulo; set => titulo=value; }
         public bool Emprestado { get => emprestado; set=>emprestado=value; }
 
-        
+        public Livro(int _id, string _autor, string _titulo)
+        {
+            Idlivro = _id;
+            Autor = _autor;
+            Titulo = _titulo;
+        }
 
 
 

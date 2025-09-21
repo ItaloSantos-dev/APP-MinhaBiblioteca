@@ -9,7 +9,6 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.TelaAdd.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Views.adm.TelaAdm.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.TelaAluno.resources
-D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Forms.ConfirmarEmp.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.MinhaBiblioteca.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Forms.registrar.TelaRegistro.resources
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Properties.Resources.resources
@@ -19,3 +18,5 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBib.CE4EFD13.Up2Date
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.exe
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.pdb
+D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Forms.ConfirmarLogin.resources
+D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.exe.config

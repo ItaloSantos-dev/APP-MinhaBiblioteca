@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace MinhaBiblioteca.Forms
 {
-    public partial class ConfirmarEmp : Form
+    public partial class ConfirmarLogin : Form
     {
         private int id;
-        public ConfirmarEmp(int id_livro)
+        public ConfirmarLogin(int id_livro)
         {
             id = id_livro;
             InitializeComponent();

@@ -21,5 +21,14 @@ namespace MinhaBiblioteca.Models_tabelas_
         public string Tipo { get => tipo; set=>tipo=value; }
         public string Identificador { get => identificador; set=> identificador = value; }
         private int Livro_pego { get => livro_pego; set => livro_pego = value; }
+
+        public Usuario(int _id, string _nome, string _cpf, string _tipo, string _identificador)
+        {
+            Id = _id;
+            Nome = _nome;
+            Cpf = _cpf;
+            Tipo = _tipo;
+            Identificador = _identificador;
+        }
     }
 }
