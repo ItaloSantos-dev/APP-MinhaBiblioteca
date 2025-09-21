@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `biblioteca` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `biblioteca`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: biblioteca
@@ -24,10 +26,10 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id_reg` int NOT NULL AUTO_INCREMENT,
-  `tipo` enum('aluno','professor','admin') COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nome` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `identificador` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cpf` varchar(11) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tipo` enum('aluno','professor','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nome` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `identificador` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `cpf` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `livro_pego` int DEFAULT NULL,
   PRIMARY KEY (`id_reg`),
   UNIQUE KEY `cpf` (`cpf`),
@@ -55,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-21 11:33:11
+-- Dump completed on 2025-09-21 11:42:36
