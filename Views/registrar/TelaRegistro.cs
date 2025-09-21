@@ -85,6 +85,7 @@ namespace MinhaBiblioteca.Forms.registrar
 
         private void btnReg_Click(object sender, EventArgs e)
         {
+            //Cria um  objeto usuario e passando os valores digitado nos campos para o contrutor e chama a função registrar passando esse objeto criado
             RegistroController rc = new RegistroController();
             Usuario usuario = new Usuario(0, txtNome.Text, txtCpf.Text, radioAluno.Checked ? "aluno" : radioProf.Checked ? "professor" : "", txtIden.Text);
             rc.Registrar(usuario);

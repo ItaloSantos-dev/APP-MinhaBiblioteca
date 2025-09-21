@@ -53,6 +53,7 @@ namespace MinhaBiblioteca
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //salvando o usuario e senha digitado e chamando a função validar login
             string usuario = txtUser.Text;
             string senha = txtSenha.Text;
             RegistroController rc = new RegistroController();
@@ -67,6 +68,7 @@ namespace MinhaBiblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            //cahama a view de cadastro
            TelaRegistro telaRegistro = new TelaRegistro();
            telaRegistro.Owner = this;
            this.Hide();

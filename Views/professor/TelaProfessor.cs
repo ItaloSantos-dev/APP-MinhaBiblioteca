@@ -15,6 +15,7 @@ namespace MinhaBiblioteca
 {
     public partial class TelaProfessor : Form
     {
+        //intanciando um livrosController
         LivrosController lc = new LivrosController();
         public TelaProfessor()
         {
@@ -31,14 +32,12 @@ namespace MinhaBiblioteca
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            TelaAdd telaAdd = new TelaAdd();
-            telaAdd.Owner = this;
-            telaAdd.Show();
-            this.Hide();
+
         }
 
         private void btnEsc_Click(object sender, EventArgs e)
         {
+            //volta para a tela pai
             MinhaBiblioteca telalogin = this.Owner as MinhaBiblioteca;
             telalogin.limpaCampos();
             Owner.Show();
@@ -54,6 +53,7 @@ namespace MinhaBiblioteca
 
         private void btnPegar_Click(object sender, EventArgs e)
         {
+            //intancia a view de adicionar livro
             TelaAdd telaAdd = new TelaAdd();
             telaAdd.ShowDialog();
             attLista();
@@ -66,6 +66,7 @@ namespace MinhaBiblioteca
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
         {
+            //atualiza a lista a cada valor escrito na busca
             string titulobuscado = txtBusca.Text;
             DataTable tabela = lc.buscarLivro(titulobuscado);
             viewResult.DataSource = tabela;
@@ -75,16 +76,21 @@ namespace MinhaBiblioteca
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            //verifica se um livro foi selecionado
             if (viewResult.SelectedRows.Count > 0)
             {
+                //captura os valores respectivos da linha selecionada
                 int id = Convert.ToInt32(viewResult.SelectedRows[0].Cells["id_livro"].Value);
                 string titulo = viewResult.SelectedRows[0].Cells["titulo"].Value.ToString();
                 string autor = viewResult.SelectedRows[0].Cells["autor"].Value.ToString();
-                ConfirmarLogin conf_emp = new ConfirmarLogin(id);
+                //intancia a view de confirmar login
+                ConfirmarLogin conf_emp = new ConfirmarLogin();
                 DialogResult result = conf_emp.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    //intancia um objteto livro com os valortes capturados
                     Livro livro = new Livro(id, titulo,autor);
+                    //chama a função passando o objeto criado
                     lc.deletarLivro(livro);
                     attLista();
 

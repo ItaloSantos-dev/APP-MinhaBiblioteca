@@ -13,7 +13,7 @@ namespace MinhaBiblioteca.Controllers
     internal class RegistroController
     {
         Conexao conect = new Conexao();
-
+        //Faz um insert na tabela usuarios
         public void Registrar(Usuario usuario)
         {
             conect.abrirConexao();
@@ -43,7 +43,7 @@ namespace MinhaBiblioteca.Controllers
 
         }
 
-
+        //Faz um select buscando professores ou alunos ou a conta admin com os dados enviados
         public void validarLogin(string usuario, string senha, Form pai)
         {
             conect.abrirConexao();
@@ -59,6 +59,7 @@ namespace MinhaBiblioteca.Controllers
                 string tipo = reader["tipo"].ToString();
                 Sessao.Usuario = usuario;
                 Sessao.Senha = senha;
+                //se o tipo for aluno abre a view TelaAluno
                 if (tipo == "aluno")
                 {
                     TelaAluno telaAluno = new TelaAluno();
@@ -67,6 +68,8 @@ namespace MinhaBiblioteca.Controllers
                     pai.Hide();
 
                 }
+                //se o tipo for Professor abre a view TelaProfessor
+
                 else if (tipo == "professor")
                 {
                     TelaProfessor telaProfessor = new TelaProfessor();
@@ -87,7 +90,7 @@ namespace MinhaBiblioteca.Controllers
 
 
         }
-
+        //Compara os dados recebidos por parametros com os dados recebidos na classe estatica sessão que foi preenchida no ato de login
         public bool confirmaDados(string userLog, string senhaLog, string userDig, string senhaDig)
         {
             if( userLog==userDig && senhaLog == senhaDig) { return true; }

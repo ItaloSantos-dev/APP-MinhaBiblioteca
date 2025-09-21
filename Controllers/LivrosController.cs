@@ -24,9 +24,10 @@ namespace MinhaBiblioteca.Controllers
             MySqlCommand cmd = new MySqlCommand(select, conect.con);
             //parametros
             cmd.Parameters.AddWithValue("@titulobuscado", "%" + nomeLivroBuscado + "%");
-            //executando
+            //executando o comando
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable tabela = new DataTable();
+            //pega os dados buscados e adpta para uma tabela
             adapter.Fill(tabela);
             conect.fecharConexao();
             return tabela;
@@ -42,6 +43,7 @@ namespace MinhaBiblioteca.Controllers
             MySqlCommand cmd = new MySqlCommand(insert, conect.con);
             cmd.Parameters.AddWithValue("@titulo", livro.Titulo);
             cmd.Parameters.AddWithValue("@autor", livro.Autor);
+            //retorna o quantidade de linhas afetadas
             int resultado = cmd.ExecuteNonQuery();
             conect.fecharConexao();
             if (resultado > 0)
@@ -75,20 +77,8 @@ namespace MinhaBiblioteca.Controllers
 
         }
 
-        public DataTable dispoEmprestimo()
-        {
-            conect.abrirConexao();
-            string select = "SELECT id_livro, titulo, autor, emprestado FROM livros where emprestado = 0";
-            MySqlCommand cmd = new MySqlCommand(select, conect.con);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabela = new DataTable();
-            adapter.Fill(tabela);
-            conect.fecharConexao();
-            return tabela;
 
-
-        }
-
+        //Confirma se o usuario possui ou não um livro emprestado e retorna true ou false
         private bool confirmarPossibilidadeUsuario(Usuario usuario)
         {
             conect.abrirConexao();
@@ -121,7 +111,7 @@ namespace MinhaBiblioteca.Controllers
             }
 
         }
-
+        //Confrima se o livro selecionado esta em um emprestimo ou não
         public bool confirmarPossibilidadeLivros(Livro livro)
         {
             conect.abrirConexao();
@@ -153,7 +143,7 @@ namespace MinhaBiblioteca.Controllers
 
         public void pegarEmp(Livro livro, Usuario usuario)
         {
-
+            //verifica se o usuario e o livro pode ser alocados para um emprestimo
             if (confirmarPossibilidadeUsuario(usuario))
             {
                 if (confirmarPossibilidadeLivros(livro))
@@ -195,6 +185,7 @@ namespace MinhaBiblioteca.Controllers
 
         public DataTable exibirLivros()
         {
+            //Pega todas as linhas da tabela livros e adapta para uma tabela 
             conect.abrirConexao();
             string select = "SELECT *FROM livros;";
             MySqlCommand cmd = new MySqlCommand(select, conect.con);
@@ -207,6 +198,7 @@ namespace MinhaBiblioteca.Controllers
 
         public void devolverLivro()
         {
+            //Basicamente faz as verificações necessarias para ver se o usuario possui um livro em emprestimo ou não e se o livro realmente existe no banco de dados
             conect.abrirConexao();
             string select = "SELECT livro_pego FROM usuarios WHERE identificador = @idu;";
             MySqlCommand cmd = new MySqlCommand( select, conect.con);

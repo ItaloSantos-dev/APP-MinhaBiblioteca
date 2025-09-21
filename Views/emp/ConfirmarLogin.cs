@@ -15,25 +15,25 @@ namespace MinhaBiblioteca.Forms
 {
     public partial class ConfirmarLogin : Form
     {
-        private int id;
-        public ConfirmarLogin(int id_livro)
+        public ConfirmarLogin()
         {
-            id = id_livro;
             InitializeComponent();
         }
         
 
         private void btnConfirmar_Click(object sender, EventArgs e)
-        {   
+        {   //intancia um registro controller para confirmar os dados
             RegistroController rc = new RegistroController();
             if(rc.confirmaDados(Sessao.Usuario, Sessao.Senha, txtUser.Text, txtSenha.Text))
             {
+                //se os dados forem confirmados a view retorna ok
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
             }
             else
             {
+                //se não retorna cancelado para dar erro
                 this.DialogResult= DialogResult.Cancel;
             }
 

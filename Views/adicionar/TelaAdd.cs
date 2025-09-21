@@ -35,9 +35,12 @@ namespace MinhaBiblioteca
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            //instancia um livro com os valores digitado em cada campo
             Livro livros = new Livro(0, txtTitulo.Text, txtAutor.Text);
             LivrosController lc = new LivrosController();
+            //chama a função de adicionar livro passando o livro criado
             lc.addLivro(livros);
+            //limpa os campos
             txtAutor.Text = "";
             txtTitulo.Text = "";
             this.Hide();
