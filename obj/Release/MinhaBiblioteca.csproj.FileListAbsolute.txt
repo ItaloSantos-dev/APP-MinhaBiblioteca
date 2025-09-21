@@ -19,4 +19,3 @@ D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBib.CE4EFD
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.exe
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.pdb
 D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.Forms.ConfirmarLogin.resources
-D:\FACEMA\ESTUDOS\TDE_MARCAo\TDE_APP_MinhaBiblioteca\obj\Release\MinhaBiblioteca.exe.config

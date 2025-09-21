@@ -33,7 +33,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `cpf` (`cpf`),
   KEY `livro_pego` (`livro_pego`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`livro_pego`) REFERENCES `livros` (`id_livro`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'admin','Italo','666','666',NULL);
+INSERT INTO `usuarios` VALUES (1,'admin','Italo','666','666',NULL),(11,'professor','Marcos','777','77777777777',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-15 13:27:37
+-- Dump completed on 2025-09-21 11:33:11
